@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>心理档案去标识化 · 大小模型协同</title>
+<style>
+  :root { --fg:#1f2328; --muted:#656d76; --line:#d0d7de; --bg:#f6f8fa; --acc:#0b6bcb; --ok:#1a7f37; --bad:#cf222e; --warn:#9a6700; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:15px/1.6 "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; color:var(--fg); background:var(--bg); }
+  header { background:#fff; border-bottom:1px solid var(--line); padding:14px 24px; display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  header h1 { font-size:18px; margin:0; }
+  .badges { margin-left:auto; display:flex; gap:8px; flex-wrap:wrap; }
+  .badge { font-size:12px; padding:3px 9px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--muted); }
+  .badge.on { color:var(--ok); border-color:#b7e4c7; background:#eaf7ef; }
+  .badge.off { color:var(--bad); border-color:#ffcecb; background:#fff0ef; }
+  main { max-width:1000px; margin:0 auto; padding:22px 20px 60px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:18px; }
+  .card h2 { font-size:15px; margin:0 0 12px; display:flex; gap:8px; align-items:center; }
+  .step { width:22px; height:22px; border-radius:50%; background:var(--acc); color:#fff; font-size:12px; display:inline-flex; align-items:center; justify-content:center; }
+  .row { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  button { font:inherit; padding:7px 14px; border-radius:7px; border:1px solid var(--line); background:#fff; cursor:pointer; }
+  button.primary { background:var(--acc); border-color:var(--acc); color:#fff; }
+  button:disabled { opacity:.5; cursor:not-allowed; }
+  textarea { width:100%; min-height:240px; padding:12px; border:1px solid var(--line); border-radius:8px; font:14px/1.65 Consolas, "Microsoft YaHei", monospace; resize:vertical; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th, td { border:1px solid var(--line); padding:7px 10px; text-align:left; }
+  th { background:var(--bg); font-weight:600; }
+  .muted { color:var(--muted); font-size:13px; }
+  .hint { min-height:20px; font-size:13px; color:var(--muted); }
+  .hint.err { color:var(--bad); }
+  .hint.warn { color:var(--warn); }
+  #report h1 { font-size:18px; } #report h2 { font-size:16px; margin:18px 0 6px; } #report h3 { font-size:15px; }
+  #report { line-height:1.75; }
+  details { margin-top:10px; } summary { cursor:pointer; color:var(--muted); font-size:13px; }
+  pre.raw { white-space:pre-wrap; word-break:break-word; background:var(--bg); padding:12px; border-radius:8px; font-size:13px; }
+  .footer { text-align:center; color:var(--muted); font-size:12px; margin-top:26px; }
+  .issues { margin:8px 0 0; padding-left:18px; font-size:13px; }
+  .issues li { margin:2px 0; }
+  .issues .block { color:var(--bad); }
+  .issues .warn { color:var(--warn); }
+  .refs { margin-top:16px; border-top:1px dashed var(--line); padding-top:12px; }
+  .refs ol { margin:6px 0 0; padding-left:0; list-style:none; font-size:13px; }
+  .refs li { margin:6px 0; line-height:1.6; }
+  .refno { color:var(--acc); font-weight:600; margin-right:6px; }
+  .refs a { color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>心理档案去标识化 · 大小模型协同</h1>
+  <div class="badges">
+    <span class="badge" id="badgeModel">小模型检测中…</span>
+    <span class="badge" id="badgeKey">大模型检测中…</span>
+    <span class="badge" id="badgeKb">知识库检测中…</span>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <h2><span class="step">1</span>上传档案，本地加密</h2>
+    <div class="row">
+      <input type="file" id="file" accept=".docx" />
+      <button class="primary" id="btnExtract">加密</button>
+      <span class="muted">只接受 .docx；文件只在本机处理后即弃，不上传。</span>
+    </div>
+    <div class="hint" id="hint1"></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">2</span>加密文本与对应表（可在发送前手动修改）</h2>
+    <textarea id="encText" placeholder="加密后的文本会出现在这里……"></textarea>
+    <div class="row" style="margin-top:10px">
+      <button id="btnTxt">下载加密 txt</button>
+      <button id="btnCsv">下载对应表 CSV</button>
+      <span class="muted" id="mapCount"></span>
+    </div>
+    <div style="margin-top:14px" id="tableWrap"></div>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">3</span>发送前扫描</h2>
+    <div class="row">
+      <button id="btnGuard">扫描当前文本</button>
+      <span class="muted">检查真实别名残留、手机号/身份证/邮箱等格式。扫描不调用云端。</span>
+    </div>
+    <div class="hint" id="hint2"></div>
+    <ul class="issues" id="issues"></ul>
+  </div>
+
+  <div class="card">
+    <h2><span class="step">4</span>确认后发往云端评估</h2>
+    <div class="row">
+      <button class="primary" id="btnAnalyze">确认并分析</button>
+      <span class="muted">云端单轮生成评估报告。发送内容只有加密文本、脱敏说明与本地检索的公开参考资料。</span>
+    </div>
+    <div class="hint" id="hint3"></div>
+  </div>
+
+  <div class="card" id="result" style="display:none">
+    <h2>评估报告（已回译）</h2>
+    <div id="report"></div>
+    <div class="refs" id="refs" style="display:none"></div>
+    <div class="row" style="margin-top:12px">
+      <button id="btnCopy">复制报告</button>
+    </div>
+    <details>
+      <summary>查看发给云端的加密版报告（对照用）</summary>
+      <pre class="raw" id="encReport"></pre>
+    </details>
+  </div>
+
+  <div class="footer">对应表与加密文本只存在当前页面内存中，刷新即清空。</div>
+</main>
+
+<script>
+const state = { mapping: [], encrypted: "", reportRestored: "" };
+const $ = (id) => document.getElementById(id);
+
+async function api(path, options) {
+  const resp = await fetch(path, options);
+  let data = {};
+  try { data = await resp.json(); } catch (e) { /* 非 JSON */ }
+  if (!resp.ok) {
+    const detail = Array.isArray(data.detail) ? data.detail.map((d) => d.msg || JSON.stringify(d)).join("；") : data.detail;
+    throw new Error(detail || ("HTTP " + resp.status));
+  }
+  return data;
+}
+
+function setBadge(el, ok, text) {
+  el.textContent = text;
+  el.className = "badge " + (ok ? "on" : "off");
+}
+
+function hint(el, text, kind) {
+  el.textContent = text || "";
+  el.className = "hint" + (kind ? " " + kind : "");
+}
+
+function busy(btn, on, label) {
+  if (!btn.dataset.label) btn.dataset.label = btn.textContent;
+  btn.disabled = on;
+  btn.textContent = on && label ? label : btn.dataset.label;
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+}
+
+/* 极简 Markdown 渲染：标题 / 加粗 / 列表 / 段落，够看即可 */
+function renderMarkdown(src) {
+  const lines = esc(src).split(/\r?\n/);
+  let html = "", inList = false;
+  for (const line of lines) {
+    const t = line.trim();
+    if (/^[-*] /.test(t)) {
+      if (!inList) { html += "<ul>"; inList = true; }
+      html += "<li>" + t.slice(2).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</li>";
+      continue;
+    }
+    if (inList) { html += "</ul>"; inList = false; }
+    if (/^### /.test(t)) html += "<h3>" + t.slice(4) + "</h3>";
+    else if (/^## /.test(t)) html += "<h2>" + t.slice(3) + "</h2>";
+    else if (/^# /.test(t)) html += "<h1>" + t.slice(2) + "</h1>";
+    else if (t) html += "<p>" + t.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>") + "</p>";
+  }
+  if (inList) html += "</ul>";
+  return html;
+}
+
+function renderTable() {
+  const wrap = $("tableWrap");
+  if (!state.mapping.length) {
+    wrap.innerHTML = '<p class="muted">没有需要替换的实体，文档可原样发送。</p>';
+    $("mapCount").textContent = "";
+    return;
+  }
+  const rows = state.mapping.map((m) =>
+    `<tr><td>${esc(m.placeholder)}</td><td>${esc(m.category)}</td><td>${esc(m.relation || "—")}</td><td>${esc(m.original)}</td><td>${m.count}</td></tr>`
+  ).join("");
+  wrap.innerHTML =
+    '<table><thead><tr><th>占位符</th><th>类别</th><th>关系/类型</th><th>原文</th><th>出现次数</th></tr></thead><tbody>' +
+    rows + "</tbody></table>";
+  $("mapCount").textContent = `共 ${state.mapping.length} 类实体`;
+}
+
+function renderIssues(issues) {
+  const list = $("issues");
+  list.innerHTML = (issues || []).map((item) =>
+    `<li class="${item.blocking ? "block" : "warn"}">${item.blocking ? "阻断" : "提示"}：${esc(item.message)}（${esc(item.preview)}）</li>`
+  ).join("");
+  if (!issues || !issues.length) list.innerHTML = '<li class="muted">未发现风险项。</li>';
+}
+
+function renderReferences(refs) {
+  const wrap = $("refs");
+  if (!refs || !refs.length) {
+    wrap.style.display = "none";
+    wrap.innerHTML = "";
+    return;
+  }
+  const items = refs.map((ref, index) => {
+    const meta = [ref.source_title, ref.source_year].filter(Boolean).join("，");
+    const src = /^https?:\/\//i.test(ref.source_url || "")
+      ? `<a href="${esc(ref.source_url)}" target="_blank" rel="noreferrer">${esc(meta)}</a>`
+      : esc(meta);
+    return `<li><span class="refno">[${index + 1}]</span>${esc(ref.title)}` +
+      `<span class="muted"> · ${esc(ref.topic)} · ${src}</span></li>`;
+  }).join("");
+  wrap.innerHTML = '<div class="muted">参考依据：本地知识库按档案内容检索，报告中的 [编号] 对应下列公开专业资料。</div>' +
+    `<ol>${items}</ol>`;
+  wrap.style.display = "";
+}
+
+function download(name, content, type) {  const blob = new Blob([content], { type: type });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+$("btnExtract").onclick = async () => {
+  const file = $("file").files[0];
+  if (!file) return hint($("hint1"), "请先选择一个 .docx 文件", "err");
+  busy($("btnExtract"), true, "加密中…");
+  hint($("hint1"), "小模型正在抽取实体……");
+  const form = new FormData();
+  form.append("file", file);
+  try {
+    const data = await api("/api/extract", { method: "POST", body: form });
+    state.mapping = data.mapping || [];
+    state.encrypted = data.encrypted_text || "";
+    $("encText").value = state.encrypted;
+    renderTable();
+    renderIssues(data.guard_issues || []);
+    hint($("hint1"), state.mapping.length
+      ? `完成：替换了 ${state.mapping.length} 类实体，请检查下方文本后确认发送。`
+      : "完成：未发现需要脱敏的实体，请检查下方文本。");
+    $("result").style.display = "none";
+  } catch (err) {
+    hint($("hint1"), err.message, "err");
+  } finally {
+    busy($("btnExtract"), false);
+  }
+};
+
+$("btnTxt").onclick = () => {
+  const text = $("encText").value;
+  if (!text.trim()) return hint($("hint1"), "还没有加密文本", "err");
+  download("encrypted.txt", text, "text/plain;charset=utf-8");
+};
+
+$("btnCsv").onclick = () => {
+  if (!state.mapping.length) return hint($("hint1"), "没有对应表", "err");
+  const cell = (v) => '"' + String(v).replace(/"/g, '""') + '"';
+  const lines = ["占位符,类别,关系,原文,出现次数"].concat(
+    state.mapping.map((m) => [m.placeholder, m.category, m.relation || "", m.original, m.count].map(cell).join(","))
+  );
+  download("mapping.csv", "\ufeff" + lines.join("\r\n"), "text/csv;charset=utf-8");
+};
+
+$("btnGuard").onclick = async () => {
+  const text = $("encText").value;
+  if (!text.trim()) return hint($("hint2"), "加密文本为空", "err");
+  busy($("btnGuard"), true, "扫描中…");
+  try {
+    const data = await api("/api/guard", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: text, mapping: state.mapping }),
+    });
+    renderIssues(data.issues || []);
+    hint($("hint2"), data.blocked ? "扫描未通过：存在阻断级风险，请修改后再发送。" : "扫描通过：没有发现阻断级风险。", data.blocked ? "err" : "");
+  } catch (err) {
+    hint($("hint2"), err.message, "err");
+  } finally {
+    busy($("btnGuard"), false);
+  }
+};
+
+$("btnAnalyze").onclick = async () => {
+  const text = $("encText").value.trim();
+  if (!text) return hint($("hint3"), "加密文本为空", "err");
+  busy($("btnAnalyze"), true, "分析中…");
+  hint($("hint3"), "正在检索本地知识库并调用云端大模型……");
+  try {
+    const data = await api("/api/analyze", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ encrypted_text: text, mapping: state.mapping }),
+    });
+    state.reportRestored = data.report_restored || "";
+    $("report").innerHTML = renderMarkdown(state.reportRestored);
+    $("encReport").textContent = data.report_encrypted || "";
+    renderReferences(data.references || []);
+    $("result").style.display = "";
+    hint($("hint3"), "完成。");
+  } catch (err) {
+    hint($("hint3"), err.message, "err");
+  } finally {
+    busy($("btnAnalyze"), false);
+  }
+};
+
+$("btnCopy").onclick = async () => {
+  try {
+    await navigator.clipboard.writeText(state.reportRestored);
+    hint($("hint3"), "报告已复制");
+  } catch (e) {
+    hint($("hint3"), "复制失败，请手动选中", "err");
+  }
+};
+
+(async () => {
+  try {
+    const h = await api("/api/health");
+    setBadge($("badgeModel"), h.local_alive, (h.local_alive ? "小模型 ✓ " : "小模型 ✗ ") + h.local_backend + " · " + h.local_model);
+    setBadge($("badgeKey"), h.llm_key, (h.llm_key ? "大模型 key ✓ " : "大模型 key ✗ ") + h.deepseek_model);
+    setBadge($("badgeKb"), h.kb_cards > 0, "知识库 " + (h.kb_cards || 0) + " 卡");
+  } catch (e) {
+    setBadge($("badgeModel"), false, "小模型状态未知");
+    setBadge($("badgeKey"), false, "大模型状态未知");
+    setBadge($("badgeKb"), false, "知识库状态未知");
+  }
+})();
+</script>
+</body>
+</html>

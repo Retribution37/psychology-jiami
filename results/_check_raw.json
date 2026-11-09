@@ -1,0 +1,92 @@
+{
+ "summary": {
+  "n": 1,
+  "json_valid_rate": 1.0,
+  "avg_contract_violations": 2.0,
+  "entity_precision": 0.75,
+  "entity_recall": 0.42857142857142855,
+  "relation_accuracy": 1.0,
+  "patient_placeholder_accuracy": 1.0,
+  "direct_leak_rate": 1.0,
+  "guard_block_rate": 0.0,
+  "over_redaction_rate": 0.25,
+  "keypoint_coverage": 1.0,
+  "protected_retention": 1.0,
+  "avg_length_ratio": 0.8333333333333334,
+  "label": "check",
+  "elapsed_sec": 3.6,
+  "avg_latency_sec": 3.6
+ },
+ "rows": [
+  {
+   "id": "test-0000",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 4,
+   "precision": 0.75,
+   "recall": 0.42857142857142855,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "滨河小区"
+   ],
+   "leaked_aliases": [
+    "彭宇辰",
+    "江州大学",
+    "郭雨欣"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 非法关系 '居住地'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8333333333333334,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "曹文博",
+     "aliases": [
+      "曹文博"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "滨河小区",
+     "aliases": [
+      "滨河小区"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13889672079",
+     "aliases": [
+      "13889672079"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "453660636",
+     "aliases": [
+      "453660636"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，21岁，江州大学大二学生，住地点A2栋301。\n与室友郭雨欣因作息问题多次争执，近期情绪低落、回避社交。\n辅导员彭宇辰介入调解，效果有限。\n手机 账号A，QQ 账号B。"
+  }
+ ]
+}

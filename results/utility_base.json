@@ -1,0 +1,286 @@
+{
+ "summary": {
+  "n_samples": 30,
+  "keypoint_coverage": 1.0,
+  "protected_retention": 1.0,
+  "avg_length_ratio": 0.8218243100473417,
+  "avg_mapping_size": 5.666666666666667,
+  "missing_placeholder_count": 0,
+  "unknown_placeholder_count": 0,
+  "report_keypoint_coverage": null,
+  "judge_avg": null
+ },
+ "rows": [
+  {
+   "id": "test-0000",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7777777777777778,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0001",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8333333333333334,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0002",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8230088495575221,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0003",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7851851851851852,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0004",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8045977011494253,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0005",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.916083916083916,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0006",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0007",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7631578947368421,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0008",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.648936170212766,
+   "mapping_size": 3,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0009",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.808695652173913,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0010",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8163265306122449,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0011",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0012",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8529411764705882,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0013",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0014",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8539325842696629,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0015",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0016",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.822429906542056,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0017",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7777777777777778,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0018",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.822429906542056,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0019",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 1.0,
+   "mapping_size": 0,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0020",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0021",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0022",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9166666666666666,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0023",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8446601941747572,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0024",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.826530612244898,
+   "mapping_size": 6,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0025",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8529411764705882,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0026",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8529411764705882,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0027",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8529411764705882,
+   "mapping_size": 7,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0028",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 1.0,
+   "mapping_size": 0,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  },
+  {
+   "id": "test-0029",
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9103448275862069,
+   "mapping_size": 5,
+   "missing_placeholders": 0,
+   "unknown_placeholders": 0
+  }
+ ],
+ "cloud_reports": []
+}

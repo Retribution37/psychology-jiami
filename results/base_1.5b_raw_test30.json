@@ -1,0 +1,1966 @@
+{
+ "summary": {
+  "n": 30,
+  "json_valid_rate": 1.0,
+  "avg_contract_violations": 1.7666666666666666,
+  "entity_precision": 0.9652380952380952,
+  "entity_recall": 0.7274603174603175,
+  "relation_accuracy": 0.880952380952381,
+  "patient_placeholder_accuracy": 0.9629629629629629,
+  "direct_leak_rate": 0.8666666666666667,
+  "guard_block_rate": 0.1,
+  "over_redaction_rate": 0.043859649122807015,
+  "keypoint_coverage": 1.0,
+  "protected_retention": 1.0,
+  "avg_length_ratio": 0.8510427092136366,
+  "label": "base_1.5b_raw",
+  "elapsed_sec": 100.1,
+  "avg_latency_sec": 3.34
+ },
+ "rows": [
+  {
+   "id": "test-0000",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 4,
+   "precision": 0.75,
+   "recall": 0.42857142857142855,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "滨河小区"
+   ],
+   "leaked_aliases": [
+    "彭宇辰",
+    "江州大学",
+    "郭雨欣"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 非法关系 '居住地'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8333333333333334,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "曹文博",
+     "aliases": [
+      "曹文博"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "滨河小区",
+     "aliases": [
+      "滨河小区"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13889672079",
+     "aliases": [
+      "13889672079"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "453660636",
+     "aliases": [
+      "453660636"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，21岁，江州大学大二学生，住地点A2栋301。\n与室友郭雨欣因作息问题多次争执，近期情绪低落、回避社交。\n辅导员彭宇辰介入调解，效果有限。\n手机 账号A，QQ 账号B。"
+  },
+  {
+   "id": "test-0001",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 2,
+   "precision": 1.0,
+   "recall": 0.4,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "13847840987",
+    "曹思妍",
+    "曹文博"
+   ],
+   "guard_blocks": [
+    "疑似手机号未脱敏"
+   ],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 非法关系 '住址'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9285714285714286,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "胡一鸣",
+     "aliases": [
+      "胡一鸣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "新华路12号",
+     "aliases": [
+      "新华路12号"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，18岁，现住地点B。\n因楼上邻居曹思妍长期噪音问题产生冲突，近期焦虑、失眠。\n母亲曹文博陪同来访，联系电话 13847840987，无自伤意念。"
+  },
+  {
+   "id": "test-0002",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 7,
+   "precision": 0.8571428571428571,
+   "recall": 0.8571428571428571,
+   "relation_accuracy": 0.8333333333333334,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "翠湖公寓"
+   ],
+   "leaked_aliases": [],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8672566371681416,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "郭雨欣",
+     "aliases": [
+      "郭雨欣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "父母",
+     "original": "邓皓宇",
+     "aliases": [
+      "邓皓宇"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "父亲",
+     "original": "胡一鸣",
+     "aliases": [
+      "胡一鸣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "学校",
+     "original": "城南中学",
+     "aliases": [
+      "城南中学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "医院",
+     "original": "市中心医院",
+     "aliases": [
+      "市中心医院"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点C",
+     "category": "地点",
+     "relation": "常去地点",
+     "original": "翠湖公寓",
+     "aliases": [
+      "翠湖公寓"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13839945702",
+     "aliases": [
+      "13839945702"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，17岁，地点A高二学生。\n父母长期在外地，由外婆照顾。母亲人物B在地点B工作，父亲人物C偶尔回家。\n近期因家庭矛盾情绪低落、入睡困难，无自伤意念。\n现住地点CB座806，手机 账号A。"
+  },
+  {
+   "id": "test-0003",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 6,
+   "precision": 1.0,
+   "recall": 0.8571428571428571,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "第二人民医院"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#3 非法关系 '住址'",
+    "#4 非法关系 '住址'",
+    "#4 别名不合规 '外婆'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8074074074074075,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "赵明轩",
+     "aliases": [
+      "赵明轩"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "母亲",
+     "original": "梁俊熙",
+     "aliases": [
+      "梁俊熙"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "父亲",
+     "original": "许景行",
+     "aliases": [
+      "许景行"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "锦绣花园7栋1201",
+     "aliases": [
+      "锦绣花园7栋1201"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13872610965",
+     "aliases": [
+      "13872610965"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_frhzsi50",
+     "aliases": [
+      "wx_frhzsi50"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，16岁。\n近三个月因父母离异情绪低落，夜间失眠，食欲下降。\n母亲人物B在第二人民医院工作，父亲人物C长期在外地，来访者与母亲关系紧张。\n现住地点A，与外婆同住，无自伤意念。\n联系电话 账号A，微信 账号B。"
+  },
+  {
+   "id": "test-0004",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 4,
+   "precision": 0.75,
+   "recall": 0.6,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "春江苑"
+   ],
+   "leaked_aliases": [
+    "蒋昊然"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 非法关系 '住址'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8735632183908046,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "王雨桐",
+     "aliases": [
+      "王雨桐"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "春江苑",
+     "aliases": [
+      "春江苑"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "母亲",
+     "original": "苏婉清",
+     "aliases": [
+      "苏婉清"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13891960302",
+     "aliases": [
+      "13891960302"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，15岁，现住地点A4栋1103。\n因楼上邻居蒋昊然长期噪音问题产生冲突，近期焦虑、失眠。\n母亲人物B陪同来访，联系电话 账号A，无自伤意念。"
+  },
+  {
+   "id": "test-0005",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.8,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "实验中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 别名不在原文 '来访者母亲'",
+    "#1 别名不合规 '来访者母亲'",
+    "#4 非法关系 '手机'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9230769230769231,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "宋佳宁",
+     "aliases": [
+      "宋佳宁"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同桌",
+     "original": "罗嘉诚",
+     "aliases": [
+      "罗嘉诚",
+      "马晓彤"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13801749264",
+     "aliases": [
+      "13801749264"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，18岁，实验中学高三学生。\n主诉：近两个月情绪低落，入睡困难，白天注意力下降，月考成绩下降。\n诱因：同桌人物B多次在班级群里嘲讽来访者，老师人物B知情后调解效果有限。\n来访者与母亲关系紧张，曾因手机使用发生争执，但无自伤意念。\n联系方式：手机 账号A。"
+  },
+  {
+   "id": "test-0006",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.5714285714285714,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "临江大学",
+    "林老师",
+    "黄俊杰"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8095238095238095,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "赵若曦",
+     "aliases": [
+      "赵若曦"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "新华路12号",
+     "aliases": [
+      "新华路12号"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13864286168",
+     "aliases": [
+      "13864286168"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "693779364",
+     "aliases": [
+      "693779364"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，22岁，临江大学大二学生，住地点A。\n与室友黄俊杰因作息问题多次争执，近期情绪低落、回避社交。\n辅导员林老师介入调解，效果有限。\n手机 账号A，QQ 账号B。"
+  },
+  {
+   "id": "test-0007",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.8333333333333334,
+   "relation_accuracy": 0.8,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "李泽宇"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7631578947368421,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "李梦琪",
+     "aliases": [
+      "李梦琪"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "母亲",
+     "original": "陈静怡",
+     "aliases": [
+      "陈静怡"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "医院",
+     "original": "安宁医院",
+     "aliases": [
+      "安宁医院"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "身份证",
+     "original": "110101200801018917",
+     "aliases": [
+      "110101200801018917",
+      "13840906888"
+     ],
+     "count": 2
+    }
+   ],
+   "encrypted": "来访者，女，18岁，由母亲人物B陪同到地点B复诊。\n诊断为中重度抑郁，近两周入睡困难、食欲下降，无自伤意念。\n医生李泽宇建议继续每周一次咨询。\n身份证 账号B，手机 账号B。"
+  },
+  {
+   "id": "test-0008",
+   "error": "",
+   "gold_entities": 3,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 1.0,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": null,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.648936170212766,
+   "mapping": [
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13815304334",
+     "aliases": [
+      "13815304334"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_kveqlg80",
+     "aliases": [
+      "wx_kveqlg80"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号C",
+     "category": "账号",
+     "relation": "邮箱",
+     "original": "user7993@example.com",
+     "aliases": [
+      "user7993@example.com"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者未透露姓名，仅留下联系方式。\n手机 账号A，微信 账号B，邮箱 账号C。\n主诉近期入睡困难，注意力下降，无自伤意念。"
+  },
+  {
+   "id": "test-0009",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 5,
+   "precision": 1.0,
+   "recall": 0.8571428571428571,
+   "relation_accuracy": 0.6666666666666666,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "康宁医院"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8173913043478261,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "陈嘉豪",
+     "aliases": [
+      "陈嘉豪"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "父母",
+     "original": "罗嘉诚",
+     "aliases": [
+      "罗嘉诚",
+      "曹思妍"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "学校",
+     "original": "高新外国语学校",
+     "aliases": [
+      "高新外国语学校"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "学府花园1栋902",
+     "aliases": [
+      "学府花园1栋902"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13881450972",
+     "aliases": [
+      "13881450972"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，16岁，地点A高一学生。\n父母长期在外地，由外婆照顾。母亲人物B在康宁医院工作，父亲人物B偶尔回家。\n近期因家庭矛盾情绪低落、入睡困难，无自伤意念。\n现住地点B，手机 账号A。"
+  },
+  {
+   "id": "test-0010",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.8333333333333334,
+   "relation_accuracy": 0.8,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "市第一中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#3 非法关系 '微信号'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8367346938775511,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "郭雨欣",
+     "aliases": [
+      "郭雨欣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同学",
+     "original": "许清越",
+     "aliases": [
+      "许清越"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "老师",
+     "original": "吴静姝",
+     "aliases": [
+      "吴静姝"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_atwzlx47",
+     "aliases": [
+      "wx_atwzlx47",
+      "86337958"
+     ],
+     "count": 2
+    }
+   ],
+   "encrypted": "来访者，15岁，市第一中学学生。\n近期在社交平台被同学人物B辱骂，出现焦虑、回避社交。\n老师人物C与母亲均已知情，来访者无自伤意念。\n微信号 账号B，QQ 账号B。"
+  },
+  {
+   "id": "test-0011",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.6666666666666666,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "刘思远",
+    "唐可馨"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "张子轩",
+     "aliases": [
+      "张子轩"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "临江大学",
+     "aliases": [
+      "临江大学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "学号",
+     "original": "2023542527",
+     "aliases": [
+      "2023542527"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "邮箱",
+     "original": "user4648@example.com",
+     "aliases": [
+      "user4648@example.com"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，22岁，地点B大三学生。\n因论文压力出现焦虑、入睡困难，成绩下降。\n室友唐可馨陪同前来，辅导员刘思远已知情。\n邮箱 账号A，学号 账号B。"
+  },
+  {
+   "id": "test-0012",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 5,
+   "precision": 1.0,
+   "recall": 0.7142857142857143,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "第七中学",
+    "陈老师"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8627450980392157,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "周天佑",
+     "aliases": [
+      "周天佑"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "恋人",
+     "original": "孙博文",
+     "aliases": [
+      "孙博文"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "朋友",
+     "original": "何雨泽",
+     "aliases": [
+      "何雨泽"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "857436627",
+     "aliases": [
+      "857436627"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_gwkray64",
+     "aliases": [
+      "wx_gwkray64"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，16岁，第七中学高一学生。\n近一个月因与恋人人物B分手出现情绪低落，入睡困难，注意力下降。\n朋友人物C建议其求助，班主任陈老师已知情。\nQQ 账号A，微信 账号B。"
+  },
+  {
+   "id": "test-0013",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.6666666666666666,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "张子轩",
+    "杨宇航"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 非法关系 '年龄'",
+    "#1 别名不合规 '22岁'",
+    "#3 非法关系 '大学'",
+    "#3 别名不合规 '大三学生'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "徐志强",
+     "aliases": [
+      "徐志强"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "东林大学",
+     "aliases": [
+      "东林大学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "邮箱",
+     "original": "user4378@example.com",
+     "aliases": [
+      "user4378@example.com",
+      "2023176796"
+     ],
+     "count": 2
+    }
+   ],
+   "encrypted": "来访者，22岁，地点B大三学生。\n因论文压力出现焦虑、入睡困难，成绩下降。\n室友杨宇航陪同前来，辅导员张子轩已知情。\n邮箱 账号B，学号 账号B。"
+  },
+  {
+   "id": "test-0014",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 2,
+   "precision": 1.0,
+   "recall": 0.4,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": false,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "何静雯",
+    "第十二中学",
+    "郭雨欣"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9101123595505618,
+   "mapping": [
+    {
+     "placeholder": "人物A",
+     "category": "人物",
+     "relation": "同桌",
+     "original": "黄思彤",
+     "aliases": [
+      "黄思彤"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_fqapwo26",
+     "aliases": [
+      "wx_fqapwo26"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者郭雨欣，女，15岁，第十二中学学生。\n因被班主任何静雯当众批评，出现情绪低落、回避社交、注意力下降。\n同桌人物A反映其近期常在课后独自哭泣。\n微信 账号A。"
+  },
+  {
+   "id": "test-0015",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.6666666666666666,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "蒋老师",
+    "邓雅雯"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "朱可欣",
+     "aliases": [
+      "朱可欣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "明海大学",
+     "aliases": [
+      "明海大学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "学号",
+     "original": "2023391075",
+     "aliases": [
+      "2023391075"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "邮箱",
+     "original": "user7277@example.com",
+     "aliases": [
+      "user7277@example.com"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，19岁，地点B大三学生。\n因论文压力出现焦虑、入睡困难，成绩下降。\n室友邓雅雯陪同前来，辅导员蒋老师已知情。\n邮箱 账号A，学号 账号B。"
+  },
+  {
+   "id": "test-0016",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 5,
+   "precision": 0.8,
+   "recall": 0.6666666666666666,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "滨河小区"
+   ],
+   "leaked_aliases": [
+    "黄思彤"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8691588785046729,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "蒋昊然",
+     "aliases": [
+      "蒋昊然"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "学校",
+     "original": "华英中学",
+     "aliases": [
+      "华英中学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "育才中学",
+     "aliases": [
+      "育才中学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点C",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "滨河小区",
+     "aliases": [
+      "滨河小区"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13810946742",
+     "aliases": [
+      "13810946742"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，16岁，原就读于地点A，本学期转入地点B。\n因适应困难出现情绪低落、注意力下降，成绩下降。\n班主任黄思彤反映其近期常独自待在教室。\n家庭住址 地点C2栋301，手机 账号A。"
+  },
+  {
+   "id": "test-0017",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 5,
+   "precision": 0.8,
+   "recall": 0.5714285714285714,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [
+    "学府花园"
+   ],
+   "leaked_aliases": [
+    "宋承泽",
+    "曹思妍"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#2 非法关系 '居住地'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8240740740740741,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "吴凯文",
+     "aliases": [
+      "吴凯文"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "学校",
+     "original": "明海大学",
+     "aliases": [
+      "明海大学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "家庭住址",
+     "original": "学府花园",
+     "aliases": [
+      "学府花园"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13858665302",
+     "aliases": [
+      "13858665302"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "475203567",
+     "aliases": [
+      "475203567"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，21岁，地点A大二学生，住地点B1栋902。\n与室友曹思妍因作息问题多次争执，近期情绪低落、回避社交。\n辅导员宋承泽介入调解，效果有限。\n手机 账号A，QQ 账号B。"
+  },
+  {
+   "id": "test-0018",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.8333333333333334,
+   "relation_accuracy": 0.8,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "徐嘉怡"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#4 非法关系 '手机'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.822429906542056,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "黄思彤",
+     "aliases": [
+      "黄思彤"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点A",
+     "category": "地点",
+     "relation": "学校",
+     "original": "第七中学",
+     "aliases": [
+      "第七中学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "翠湖公寓B座806",
+     "aliases": [
+      "翠湖公寓B座806",
+      "城南中学"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13809382093",
+     "aliases": [
+      "13809382093"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，16岁，原就读于地点A，本学期转入地点B。\n因适应困难出现情绪低落、注意力下降，成绩下降。\n班主任徐嘉怡反映其近期常独自待在教室。\n家庭住址 地点B，手机 账号A。"
+  },
+  {
+   "id": "test-0019",
+   "error": "",
+   "gold_entities": 0,
+   "pred_entities": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "relation_accuracy": null,
+   "patient_placeholder_ok": null,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 别名不合规 '来访者'",
+    "#1 别名不合规 '朋友'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 1.0,
+   "mapping": [],
+   "encrypted": "来访者本周情绪波动较小，能够正常上课。\n与朋友交流增多，无明显回避社交。\n建议记录情绪日记，下次咨询时讨论。\n本次为第15次复诊，间隔约6周。"
+  },
+  {
+   "id": "test-0020",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.5,
+   "relation_accuracy": 0.6666666666666666,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "199256724",
+    "wx_gksotc89",
+    "江北实验中学"
+   ],
+   "guard_blocks": [
+    "疑似QQ 号未脱敏",
+    "疑似微信号未脱敏"
+   ],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#3 别名不合规 '无'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.97,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "曹思妍",
+     "aliases": [
+      "曹思妍"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同桌",
+     "original": "周天佑",
+     "aliases": [
+      "周天佑"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "老师",
+     "original": "徐嘉怡",
+     "aliases": [
+      "徐嘉怡"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，16岁，江北实验中学学生。\n近期在社交平台被同学人物B辱骂，出现焦虑、回避社交。\n老师人物C与母亲均已知情，来访者无自伤意念。\n微信号 wx_gksotc89，QQ 199256724。"
+  },
+  {
+   "id": "test-0021",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.6666666666666666,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "刘思远",
+    "梁老师"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.7227722772277227,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "梁诗琪",
+     "aliases": [
+      "梁诗琪"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "地点B",
+     "category": "地点",
+     "relation": "学校",
+     "original": "明海大学",
+     "aliases": [
+      "明海大学"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "邮箱",
+     "original": "user3877@example.com",
+     "aliases": [
+      "user3877@example.com",
+      "2023145515"
+     ],
+     "count": 2
+    }
+   ],
+   "encrypted": "来访者，20岁，地点B大三学生。\n因论文压力出现焦虑、入睡困难，成绩下降。\n室友刘思远陪同前来，辅导员梁老师已知情。\n邮箱 账号B，学号 账号B。"
+  },
+  {
+   "id": "test-0022",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.8,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "明德中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 别名不合规 '母亲'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9236111111111112,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "唐子墨",
+     "aliases": [
+      "唐子墨"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同桌",
+     "original": "黄俊杰",
+     "aliases": [
+      "黄俊杰",
+      "陈静怡"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13844663434",
+     "aliases": [
+      "13844663434"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，16岁，明德中学高一学生。\n主诉：近两个月情绪低落，入睡困难，白天注意力下降，月考成绩下降。\n诱因：同桌人物B多次在班级群里嘲讽来访者，班主任人物B知情后调解效果有限。\n来访者与母亲关系紧张，曾因手机使用发生争执，但无自伤意念。\n联系方式：手机 账号A。"
+  },
+  {
+   "id": "test-0023",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.5714285714285714,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "676310225",
+    "wx_iyilqa50",
+    "市第一中学"
+   ],
+   "guard_blocks": [
+    "疑似QQ 号未脱敏",
+    "疑似微信号未脱敏"
+   ],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 1.0,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "王雨桐",
+     "aliases": [
+      "王雨桐"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "恋人",
+     "original": "林致远",
+     "aliases": [
+      "林致远"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "同学",
+     "original": "朱瑞霖",
+     "aliases": [
+      "朱瑞霖"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物D",
+     "category": "人物",
+     "relation": "班主任",
+     "original": "胡老师",
+     "aliases": [
+      "胡老师"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，女，19岁，市第一中学高三学生。\n近一个月因与恋人人物B分手出现情绪低落，入睡困难，注意力下降。\n朋友人物C建议其求助，班主任人物D已知情。\nQQ 676310225，微信 wx_iyilqa50。"
+  },
+  {
+   "id": "test-0024",
+   "error": "",
+   "gold_entities": 6,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.8333333333333334,
+   "relation_accuracy": 0.8,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "滨河中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#3 非法关系 '微信号'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8367346938775511,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "唐子墨",
+     "aliases": [
+      "唐子墨"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同学",
+     "original": "彭雨薇",
+     "aliases": [
+      "彭雨薇",
+      "陈静怡"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_malfsr30",
+     "aliases": [
+      "wx_malfsr30"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "28220271",
+     "aliases": [
+      "28220271"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，18岁，滨河中学学生。\n近期在社交平台被同学人物B辱骂，出现焦虑、回避社交。\n班主任人物B与母亲均已知情，来访者无自伤意念。\n微信号 账号A，QQ 账号B。"
+  },
+  {
+   "id": "test-0025",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 6,
+   "precision": 1.0,
+   "recall": 0.8571428571428571,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "实验中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8627450980392157,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "唐子墨",
+     "aliases": [
+      "唐子墨"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "恋人",
+     "original": "朱瑞霖",
+     "aliases": [
+      "朱瑞霖"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "朋友",
+     "original": "马晓彤",
+     "aliases": [
+      "马晓彤"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物D",
+     "category": "人物",
+     "relation": "班主任",
+     "original": "胡老师",
+     "aliases": [
+      "胡老师"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "729380143",
+     "aliases": [
+      "729380143"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_hdlxbf71",
+     "aliases": [
+      "wx_hdlxbf71"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，15岁，实验中学初二学生。\n近一个月因与恋人人物B分手出现情绪低落，入睡困难，注意力下降。\n朋友人物C建议其求助，班主任人物D已知情。\nQQ 账号B，微信 账号A。"
+  },
+  {
+   "id": "test-0026",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 4,
+   "precision": 1.0,
+   "recall": 0.7142857142857143,
+   "relation_accuracy": 0.8,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "明德中学",
+    "曹文博"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8627450980392157,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "周语嫣",
+     "aliases": [
+      "周语嫣"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "恋人",
+     "original": "邓雅雯",
+     "aliases": [
+      "邓雅雯"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "班主任",
+     "original": "王浩然",
+     "aliases": [
+      "王浩然"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "wx_bxnhio96",
+     "aliases": [
+      "wx_bxnhio96",
+      "338245023"
+     ],
+     "count": 2
+    }
+   ],
+   "encrypted": "来访者，女，16岁，明德中学高一学生。\n近一个月因与恋人人物B分手出现情绪低落，入睡困难，注意力下降。\n朋友曹文博建议其求助，班主任人物C已知情。\nQQ 账号B，微信 账号B。"
+  },
+  {
+   "id": "test-0027",
+   "error": "",
+   "gold_entities": 7,
+   "pred_entities": 6,
+   "precision": 1.0,
+   "recall": 0.8571428571428571,
+   "relation_accuracy": 1.0,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "滨河中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.8627450980392157,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "郭子健",
+     "aliases": [
+      "郭子健"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "恋人",
+     "original": "马晨曦",
+     "aliases": [
+      "马晨曦"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物C",
+     "category": "人物",
+     "relation": "朋友",
+     "original": "林晓雨",
+     "aliases": [
+      "林晓雨"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物D",
+     "category": "人物",
+     "relation": "班主任",
+     "original": "曹老师",
+     "aliases": [
+      "曹老师"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号B",
+     "category": "账号",
+     "relation": "QQ",
+     "original": "690111611",
+     "aliases": [
+      "690111611"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "微信",
+     "original": "wx_ziimnr32",
+     "aliases": [
+      "wx_ziimnr32"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，17岁，滨河中学高一学生。\n近一个月因与恋人人物B分手出现情绪低落，入睡困难，注意力下降。\n朋友人物C建议其求助，班主任人物D已知情。\nQQ 账号B，微信 账号A。"
+  },
+  {
+   "id": "test-0028",
+   "error": "",
+   "gold_entities": 0,
+   "pred_entities": 0,
+   "precision": 1.0,
+   "recall": 1.0,
+   "relation_accuracy": null,
+   "patient_placeholder_ok": null,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 别名不合规 '来访者'",
+    "#1 别名不合规 '无'",
+    "#2 非法关系 '自伤意念'",
+    "#2 别名不合规 '无'",
+    "#3 非法关系 '无'",
+    "#3 别名不合规 '无'",
+    "#4 非法关系 '无'",
+    "#4 别名不合规 '无'",
+    "#5 非法关系 '无'",
+    "#5 别名不合规 '无'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 1.0,
+   "mapping": [],
+   "encrypted": "来访者自述近期压力有所缓解，注意力较前改善。\n家庭氛围平稳，无自伤意念。\n建议保持运动习惯，一个月后复评。\n本次为第17次复诊，间隔约1周。"
+  },
+  {
+   "id": "test-0029",
+   "error": "",
+   "gold_entities": 5,
+   "pred_entities": 3,
+   "precision": 1.0,
+   "recall": 0.8,
+   "relation_accuracy": 0.75,
+   "patient_placeholder_ok": true,
+   "over_redacted_aliases": [],
+   "leaked_aliases": [
+    "第十二中学"
+   ],
+   "guard_blocks": [],
+   "contract_violations": [
+    "#0 非法关系 '来访者'",
+    "#1 别名不合规 '母亲'"
+   ],
+   "json_valid": true,
+   "keypoint_coverage": 1.0,
+   "protected_retention": 1.0,
+   "length_ratio": 0.9241379310344827,
+   "mapping": [
+    {
+     "placeholder": "来访者",
+     "category": "人物",
+     "relation": "本人",
+     "original": "曹文博",
+     "aliases": [
+      "曹文博"
+     ],
+     "count": 1
+    },
+    {
+     "placeholder": "人物B",
+     "category": "人物",
+     "relation": "同桌",
+     "original": "陈静怡",
+     "aliases": [
+      "陈静怡",
+      "何雨泽"
+     ],
+     "count": 2
+    },
+    {
+     "placeholder": "账号A",
+     "category": "账号",
+     "relation": "电话",
+     "original": "13866412047",
+     "aliases": [
+      "13866412047"
+     ],
+     "count": 1
+    }
+   ],
+   "encrypted": "来访者，男，17岁，第十二中学高二学生。\n主诉：近两个月情绪低落，入睡困难，白天注意力下降，月考成绩下降。\n诱因：同桌人物B多次在班级群里嘲讽来访者，班主任人物B知情后调解效果有限。\n来访者与母亲关系紧张，曾因手机使用发生争执，但无自伤意念。\n联系方式：手机 账号A。"
+  }
+ ]
+}

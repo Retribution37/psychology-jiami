@@ -1,0 +1,1041 @@
+{
+ "summary": {
+  "n_samples": 30,
+  "residual_pii_rate": 0.0,
+  "alias_residual_rate": 0.0,
+  "missing_placeholder_count": 0,
+  "unknown_placeholder_count": 0,
+  "direct_leak_rate": 0.0,
+  "attack_targets": 84,
+  "reid_random_top1": 0.10714285714285714,
+  "reid_verbatim_top1": 0.10714285714285714,
+  "reid_local_top1": null,
+  "refusal_accuracy": 1.0,
+  "refusal_invalid_target_kept": 0
+ },
+ "rows": [
+  {
+   "id": "test-0000",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "曹文博",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "彭雨薇",
+     "verbatim_guess": "彭雨薇",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "郭雨欣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "郭雨欣",
+     "verbatim_guess": "郭雨欣",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "彭宇辰",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "彭宇辰",
+     "verbatim_guess": "彭宇辰",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0001",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "胡一鸣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "马晨曦",
+     "verbatim_guess": "马晨曦",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "曹思妍",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "徐嘉怡",
+     "verbatim_guess": "徐嘉怡",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "曹文博",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "孙博文",
+     "verbatim_guess": "孙博文",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0002",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "郭雨欣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹文博",
+     "verbatim_guess": "曹文博",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "邓皓宇",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "张子轩",
+     "verbatim_guess": "张子轩",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "胡一鸣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "梁俊熙",
+     "verbatim_guess": "梁俊熙",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0003",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "赵明轩",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "孙博文",
+     "verbatim_guess": "孙博文",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "梁俊熙",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹文博",
+     "verbatim_guess": "曹文博",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "许景行",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "胡梦瑶",
+     "verbatim_guess": "胡梦瑶",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0004",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "王雨桐",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "唐子墨",
+     "verbatim_guess": "唐子墨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "蒋昊然",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "潘若彤",
+     "verbatim_guess": "潘若彤",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "苏婉清",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "周天佑",
+     "verbatim_guess": "周天佑",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0005",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "宋佳宁",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "林晓雨",
+     "verbatim_guess": "林晓雨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "马晓彤",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "蒋欣怡",
+     "verbatim_guess": "蒋欣怡",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "罗嘉诚",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "李泽宇",
+     "verbatim_guess": "李泽宇",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0006",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "赵若曦",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "赵若曦",
+     "verbatim_guess": "赵若曦",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "黄俊杰",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "何雨泽",
+     "verbatim_guess": "何雨泽",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "林老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "赵老师",
+     "verbatim_guess": "赵老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0007",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "李梦琪",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "罗嘉诚",
+     "verbatim_guess": "罗嘉诚",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "陈静怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "许景行",
+     "verbatim_guess": "许景行",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "李泽宇",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "王雨桐",
+     "verbatim_guess": "王雨桐",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0008",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": []
+  },
+  {
+   "id": "test-0009",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "陈嘉豪",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "许清越",
+     "verbatim_guess": "许清越",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "曹思妍",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "梁俊熙",
+     "verbatim_guess": "梁俊熙",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "罗嘉诚",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "高文静",
+     "verbatim_guess": "高文静",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0010",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "郭雨欣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "黄俊杰",
+     "verbatim_guess": "黄俊杰",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "许清越",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "邓雅雯",
+     "verbatim_guess": "邓雅雯",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "吴静姝",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "罗嘉诚",
+     "verbatim_guess": "罗嘉诚",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0011",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "张子轩",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "张子轩",
+     "verbatim_guess": "张子轩",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "唐可馨",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "蒋欣怡",
+     "verbatim_guess": "蒋欣怡",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "刘思远",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "胡梦瑶",
+     "verbatim_guess": "胡梦瑶",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0012",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "周天佑",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "高文静",
+     "verbatim_guess": "高文静",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "孙博文",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "王浩然",
+     "verbatim_guess": "王浩然",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "何雨泽",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "郭雨欣",
+     "verbatim_guess": "郭雨欣",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物C",
+     "true": "陈老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "黄老师",
+     "verbatim_guess": "黄老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0013",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "徐志强",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "徐嘉怡",
+     "verbatim_guess": "徐嘉怡",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "杨宇航",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "赵明轩",
+     "verbatim_guess": "赵明轩",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "张子轩",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "赵若曦",
+     "verbatim_guess": "赵若曦",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0014",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "郭雨欣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "马晓彤",
+     "verbatim_guess": "马晓彤",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "何静雯",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "朱瑞霖",
+     "verbatim_guess": "朱瑞霖",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "黄思彤",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "胡一鸣",
+     "verbatim_guess": "胡一鸣",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0015",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "朱可欣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "孙博文",
+     "verbatim_guess": "孙博文",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "邓雅雯",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹思妍",
+     "verbatim_guess": "曹思妍",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "蒋老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "王老师",
+     "verbatim_guess": "王老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0016",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "蒋昊然",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "李梦琪",
+     "verbatim_guess": "李梦琪",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "黄思彤",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "黄思彤",
+     "verbatim_guess": "黄思彤",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0017",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "吴凯文",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "吴凯文",
+     "verbatim_guess": "吴凯文",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "曹思妍",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "梁诗琪",
+     "verbatim_guess": "梁诗琪",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "宋承泽",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "林致远",
+     "verbatim_guess": "林致远",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0018",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "黄思彤",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "彭雨薇",
+     "verbatim_guess": "彭雨薇",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "徐嘉怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "陈静怡",
+     "verbatim_guess": "陈静怡",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0019",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": []
+  },
+  {
+   "id": "test-0020",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "曹思妍",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹思妍",
+     "verbatim_guess": "曹思妍",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "周天佑",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "唐子墨",
+     "verbatim_guess": "唐子墨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "徐嘉怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "宋佳宁",
+     "verbatim_guess": "宋佳宁",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0021",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "梁诗琪",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "郭子健",
+     "verbatim_guess": "郭子健",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "刘思远",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "唐可馨",
+     "verbatim_guess": "唐可馨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "梁老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "马老师",
+     "verbatim_guess": "马老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0022",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "唐子墨",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "郭子健",
+     "verbatim_guess": "郭子健",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "陈静怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "朱瑞霖",
+     "verbatim_guess": "朱瑞霖",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "黄俊杰",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "唐可馨",
+     "verbatim_guess": "唐可馨",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0023",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "王雨桐",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "胡一鸣",
+     "verbatim_guess": "胡一鸣",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "林致远",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "林致远",
+     "verbatim_guess": "林致远",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "朱瑞霖",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "潘星辰",
+     "verbatim_guess": "潘星辰",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物C",
+     "true": "胡老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "王老师",
+     "verbatim_guess": "王老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0024",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "唐子墨",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹思妍",
+     "verbatim_guess": "曹思妍",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "陈静怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "赵明轩",
+     "verbatim_guess": "赵明轩",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "彭雨薇",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "周语嫣",
+     "verbatim_guess": "周语嫣",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0025",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "唐子墨",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "李梦琪",
+     "verbatim_guess": "李梦琪",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "朱瑞霖",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "林晓雨",
+     "verbatim_guess": "林晓雨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "马晓彤",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "黄俊杰",
+     "verbatim_guess": "黄俊杰",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物C",
+     "true": "胡老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "郭老师",
+     "verbatim_guess": "郭老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0026",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "周语嫣",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "何静雯",
+     "verbatim_guess": "何静雯",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "邓雅雯",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "孙悦然",
+     "verbatim_guess": "孙悦然",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "曹文博",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "曹思妍",
+     "verbatim_guess": "曹思妍",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物C",
+     "true": "王浩然",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "梁诗琪",
+     "verbatim_guess": "梁诗琪",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0027",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "郭子健",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "吴凯文",
+     "verbatim_guess": "吴凯文",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "马晨曦",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "马晨曦",
+     "verbatim_guess": "马晨曦",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "林晓雨",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "徐嘉怡",
+     "verbatim_guess": "徐嘉怡",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物C",
+     "true": "曹老师",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "朱老师",
+     "verbatim_guess": "朱老师",
+     "local_guess": ""
+    }
+   ]
+  },
+  {
+   "id": "test-0028",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": []
+  },
+  {
+   "id": "test-0029",
+   "residual_pii": [],
+   "alias_residual": [],
+   "missing_placeholders": [],
+   "unknown_placeholders": [],
+   "attacks": [
+    {
+     "placeholder": "来访者",
+     "true": "曹文博",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "胡一鸣",
+     "verbatim_guess": "胡一鸣",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物A",
+     "true": "陈静怡",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "唐可馨",
+     "verbatim_guess": "唐可馨",
+     "local_guess": ""
+    },
+    {
+     "placeholder": "人物B",
+     "true": "何雨泽",
+     "visible_placeholder": true,
+     "leaked": false,
+     "random_guess": "杨宇航",
+     "verbatim_guess": "杨宇航",
+     "local_guess": ""
+    }
+   ]
+  }
+ ]
+}

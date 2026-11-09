@@ -1,0 +1,460 @@
+{
+ "summary": {
+  "n_queries": 14,
+  "hit_at_1": 0.8571428571428571,
+  "hit_at_3": 1.0,
+  "mrr": 0.9166666666666666,
+  "avg_refs": 4.571428571428571,
+  "kb_cards": 60,
+  "reference_leak_patterns": []
+ },
+ "rows": [
+  {
+   "query": "来访者说活着没意思，已经写好遗书，想把东西送人",
+   "expected_topics": [
+    "风险评估"
+   ],
+   "returned": [
+    {
+     "id": "dep-08",
+     "topic": "抑郁",
+     "title": "抑郁与自杀风险"
+    },
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    },
+    {
+     "id": "risk-01",
+     "topic": "风险评估",
+     "title": "自杀风险应直接询问"
+    },
+    {
+     "id": "dep-05",
+     "topic": "抑郁",
+     "title": "较轻抑郁的循证选择"
+    },
+    {
+     "id": "risk-05",
+     "topic": "风险评估",
+     "title": "显著风险应立即转介"
+    },
+    {
+     "id": "cbt-02",
+     "topic": "CBT与咨询技术",
+     "title": "认知重构不是正能量"
+    }
+   ],
+   "first_hit_rank": 3
+  },
+  {
+   "query": "最近两周反复用刀片划手臂，说这样能缓解情绪",
+   "expected_topics": [
+    "风险评估"
+   ],
+   "returned": [
+    {
+     "id": "risk-07",
+     "topic": "风险评估",
+     "title": "自伤史需要单独评估"
+    },
+    {
+     "id": "dep-01",
+     "topic": "抑郁",
+     "title": "抑郁发作的核心表现"
+    },
+    {
+     "id": "dep-07",
+     "topic": "抑郁",
+     "title": "缓解后仍需巩固与维持"
+    },
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    },
+    {
+     "id": "anx-03",
+     "topic": "焦虑",
+     "title": "GAD-2 只用于初筛"
+    },
+    {
+     "id": "fam-03",
+     "topic": "家庭与关系",
+     "title": "失恋反应与风险评估"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "情绪低落，什么都不想干，觉得自己是累赘，持续两个月",
+   "expected_topics": [
+    "抑郁"
+   ],
+   "returned": [
+    {
+     "id": "dep-01",
+     "topic": "抑郁",
+     "title": "抑郁发作的核心表现"
+    },
+    {
+     "id": "sleep-01",
+     "topic": "睡眠",
+     "title": "慢性失眠的判断要点"
+    },
+    {
+     "id": "risk-07",
+     "topic": "风险评估",
+     "title": "自伤史需要单独评估"
+    },
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    },
+    {
+     "id": "anx-01",
+     "topic": "焦虑",
+     "title": "广泛性焦虑的核心特征"
+    },
+    {
+     "id": "fam-07",
+     "topic": "家庭与关系",
+     "title": "哀伤反应与复杂哀伤"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "考试前心慌手抖，担心考不好，注意力集中不了",
+   "expected_topics": [
+    "焦虑"
+   ],
+   "returned": [
+    {
+     "id": "anx-02",
+     "topic": "焦虑",
+     "title": "焦虑与惊恐发作的身体表现"
+    },
+    {
+     "id": "anx-01",
+     "topic": "焦虑",
+     "title": "广泛性焦虑的核心特征"
+    },
+    {
+     "id": "anx-07",
+     "topic": "焦虑",
+     "title": "惊恐障碍的干预重点"
+    },
+    {
+     "id": "stu-03",
+     "topic": "大学生心理",
+     "title": "网络使用看功能损害"
+    },
+    {
+     "id": "stu-01",
+     "topic": "大学生心理",
+     "title": "大学生常见压力源"
+    },
+    {
+     "id": "sleep-01",
+     "topic": "睡眠",
+     "title": "慢性失眠的判断要点"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "三个月来每周三晚入睡困难，早醒，白天没精神",
+   "expected_topics": [
+    "睡眠"
+   ],
+   "returned": [
+    {
+     "id": "sleep-01",
+     "topic": "睡眠",
+     "title": "慢性失眠的判断要点"
+    },
+    {
+     "id": "dep-04",
+     "topic": "抑郁",
+     "title": "抑郁常以躯体症状出现"
+    },
+    {
+     "id": "sleep-03",
+     "topic": "睡眠",
+     "title": "刺激控制怎么做"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "睡前总是想事情，越躺越清醒，白天疲劳",
+   "expected_topics": [
+    "睡眠"
+   ],
+   "returned": [
+    {
+     "id": "sleep-01",
+     "topic": "睡眠",
+     "title": "慢性失眠的判断要点"
+    },
+    {
+     "id": "sleep-03",
+     "topic": "睡眠",
+     "title": "刺激控制怎么做"
+    },
+    {
+     "id": "sleep-04",
+     "topic": "睡眠",
+     "title": "睡眠限制的注意事项"
+    },
+    {
+     "id": "anx-02",
+     "topic": "焦虑",
+     "title": "焦虑与惊恐发作的身体表现"
+    },
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "与室友因为卫生和噪音多次争吵，宿舍群里互相指责",
+   "expected_topics": [
+    "家庭与关系"
+   ],
+   "returned": [
+    {
+     "id": "fam-05",
+     "topic": "家庭与关系",
+     "title": "宿舍冲突的结构化处理"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "和女友分手后反复查看她的动态，回避共同课程",
+   "expected_topics": [
+    "家庭与关系"
+   ],
+   "returned": [
+    {
+     "id": "fam-03",
+     "topic": "家庭与关系",
+     "title": "失恋反应与风险评估"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "被同学起外号并在群里嘲笑，不敢去教室",
+   "expected_topics": [
+    "家庭与关系"
+   ],
+   "returned": [
+    {
+     "id": "fam-04",
+     "topic": "家庭与关系",
+     "title": "校园欺凌的识别与处置"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "母亲每天多次打电话查问，来访者觉得被控制，争吵后离家",
+   "expected_topics": [
+    "家庭与关系"
+   ],
+   "returned": [
+    {
+     "id": "fam-02",
+     "topic": "家庭与关系",
+     "title": "亲子冲突的自主与控制"
+    },
+    {
+     "id": "risk-06",
+     "topic": "风险评估",
+     "title": "安全计划与手段限制"
+    },
+    {
+     "id": "fam-06",
+     "topic": "家庭与关系",
+     "title": "亲密关系暴力的安全优先"
+    },
+    {
+     "id": "sleep-03",
+     "topic": "睡眠",
+     "title": "刺激控制怎么做"
+    },
+    {
+     "id": "anx-01",
+     "topic": "焦虑",
+     "title": "广泛性焦虑的核心特征"
+    },
+    {
+     "id": "eth-04",
+     "topic": "伦理与法律",
+     "title": "转介的时机与规范"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "咨询师能不能直接给来访者下诊断并建议吃药",
+   "expected_topics": [
+    "伦理与法律"
+   ],
+   "returned": [
+    {
+     "id": "rep-01",
+     "topic": "报告写作",
+     "title": "报告避免直接下诊断"
+    },
+    {
+     "id": "eth-01",
+     "topic": "伦理与法律",
+     "title": "心理咨询不得下诊断"
+    },
+    {
+     "id": "eth-07",
+     "topic": "伦理与法律",
+     "title": "个案记录要区分事实与推断"
+    },
+    {
+     "id": "risk-01",
+     "topic": "风险评估",
+     "title": "自杀风险应直接询问"
+    },
+    {
+     "id": "anx-03",
+     "topic": "焦虑",
+     "title": "GAD-2 只用于初筛"
+    },
+    {
+     "id": "cbt-06",
+     "topic": "CBT与咨询技术",
+     "title": "评估阶段的基本会谈技能"
+    }
+   ],
+   "first_hit_rank": 2
+  },
+  {
+   "query": "挂科两门，毕业论文拖了很久，临近毕业很迷茫",
+   "expected_topics": [
+    "大学生心理"
+   ],
+   "returned": [
+    {
+     "id": "stu-02",
+     "topic": "大学生心理",
+     "title": "完美主义与自我价值绑定"
+    },
+    {
+     "id": "stu-01",
+     "topic": "大学生心理",
+     "title": "大学生常见压力源"
+    },
+    {
+     "id": "eth-02",
+     "topic": "伦理与法律",
+     "title": "保密的界限与例外"
+    },
+    {
+     "id": "dep-09",
+     "topic": "抑郁",
+     "title": "功能损害决定干预强度"
+    },
+    {
+     "id": "stu-03",
+     "topic": "大学生心理",
+     "title": "网络使用看功能损害"
+    },
+    {
+     "id": "dep-01",
+     "topic": "抑郁",
+     "title": "抑郁发作的核心表现"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "报告如何区分咨询师的推断和档案事实",
+   "expected_topics": [
+    "报告写作",
+    "伦理与法律"
+   ],
+   "returned": [
+    {
+     "id": "eth-07",
+     "topic": "伦理与法律",
+     "title": "个案记录要区分事实与推断"
+    },
+    {
+     "id": "rep-03",
+     "topic": "报告写作",
+     "title": "信息缺口要具体可回答"
+    },
+    {
+     "id": "rep-01",
+     "topic": "报告写作",
+     "title": "报告避免直接下诊断"
+    },
+    {
+     "id": "stu-04",
+     "topic": "大学生心理",
+     "title": "高校危机干预的基本流程"
+    },
+    {
+     "id": "eth-01",
+     "topic": "伦理与法律",
+     "title": "心理咨询不得下诊断"
+    },
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    }
+   ],
+   "first_hit_rank": 1
+  },
+  {
+   "query": "如何帮助来访者识别自动思维，布置家庭作业",
+   "expected_topics": [
+    "CBT与咨询技术"
+   ],
+   "returned": [
+    {
+     "id": "cbt-01",
+     "topic": "CBT与咨询技术",
+     "title": "CBT 认知模型"
+    },
+    {
+     "id": "cbt-05",
+     "topic": "CBT与咨询技术",
+     "title": "家庭作业要协作设计"
+    },
+    {
+     "id": "cbt-02",
+     "topic": "CBT与咨询技术",
+     "title": "认知重构不是正能量"
+    },
+    {
+     "id": "fam-04",
+     "topic": "家庭与关系",
+     "title": "校园欺凌的识别与处置"
+    },
+    {
+     "id": "risk-06",
+     "topic": "风险评估",
+     "title": "安全计划与手段限制"
+    }
+   ],
+   "first_hit_rank": 1
+  }
+ ]
+}
