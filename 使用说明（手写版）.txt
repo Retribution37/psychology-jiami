@@ -1,0 +1,45 @@
+这玩意的启动是这样的：
+先开powershell，
+然后输入
+
+cd 文件路径\project
+
+（路径直接复制文件资源管理器搜索栏左边那串就好）（保证进入project文件夹）
+之后先输入：
+
+py --list-paths
+
+查看电脑上的python是啥版本（起码得是3.10以上）
+然后输入：
+
+# 创建虚拟环境（下面xx那里查到啥就写啥）
+py -3.xx -m venv .venv	
+# 安装依赖
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+
+（安装完powershell窗口别关）
+之后打开project里面的env文件，填入自己deepseek的api
+
+回到powershell窗口，输入：
+
+..\tools\llama-vulkan\llama-server.exe `
+  -m ..\models\qwen2.5-1.5b-ft-q4_k_m.gguf `
+  -ngl 99 -c 4096 --host 127.0.0.1 --port 8080
+
+启动本地模型
+然后再开一个powershell窗口，用来启动前端
+依旧输入：
+
+cd 文件路径\project
+
+（路径直接复制文件资源管理器搜索栏左边那串就好）（保证进入project文件夹）
+之后输入：
+
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+
+最后在浏览器里面打开
+http://127.0.0.1:8000
+就可以用啦~
+
+想体验一下效果的，可以把我放在里面的word文档扔进去试试

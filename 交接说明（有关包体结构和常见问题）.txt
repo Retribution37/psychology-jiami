@@ -1,0 +1,319 @@
+心理档案去标识化 · 大小模型协同 —— 工作区交接说明（整合 2026-11-09 更新）
+
+打包日期：2026-11-08
+更新日期：2026-11-09
+适用平台：Windows 10/11 x64
+
+本文件整合了 2026-11-08 交接说明与 2026-11-09 更新说明。
+完整工作区包含 project/、models/、tools/、NAP2-privacy-rewrite-main/。
+2026-11-09 更新包只包含更新后的 project/（代码、知识库、合成数据、评测结果与文档），不包含 models/、tools/、NAP2 数据集；这些与上次发送的版本相同，继续沿用即可。更新包也不包含 .env、API key、.git、__pycache__ 和 pip 临时目录。
+
+
+======================================================================
+一、包内结构
+======================================================================
+
+解压后应得到：
+
+jiami/
+├─ project/                        代码、合成数据、知识库、评测结果、文档、前端
+├─ models/                         基座、LoRA、合并权重、GGUF 模型
+├─ tools/                          llama.cpp 可执行文件与转换脚本
+├─ NAP2-privacy-rewrite-main/      第三方参考数据集（另有许可证）
+└─ 交接说明-先读我.txt             本文件
+
+各部分作用：
+
+project/
+  app/             FastAPI 后端（抽取、护栏、单轮报告生成、回译）
+  web/             单页前端
+  新增本地心理学知识库与 RAG 检索模块：15 个评估来源、60 张知识卡，报告可带 [编号] 引用
+  data/            600 训练 / 80 验证 / 30 测试，全部为合成数据
+  data_gen/        数据生成器（固定随机种子，可复现）
+  train/           SFT 数据转换 + LoRA 训练
+  eval/            抽取、隐私、效用三层评测脚本
+  results/         已跑出的评测结果 JSON
+  docs/            整体框架、技术报告、早期微调指南
+  tools/mock_cloud.py  假云端，只用于联调单轮报告协议
+  smoke.py         离线自检，不需要模型和 key
+
+  2026-11-09 更新后，已删除 app/policy.py、两轮提示词与前端缺口裁决表；
+  接口不再返回 rounds/gaps。云端改为单轮生成报告，信息缺口统一写在报告第五节。
+
+models/
+  Qwen2.5-1.5B-Instruct/                 原始基座（重训用，2.9GB）
+  qwen2.5-1.5b-lora/adapter/             LoRA 适配器
+  qwen2.5-1.5b-lora/merged/              合并后的 HuggingFace 权重（重训/导出用，3.0GB）
+  qwen2.5-1.5b-lora/train_summary.json   训练参数与 loss 记录
+  qwen2.5-1.5b-ft-f16.gguf               导出中间产物（2.9GB，日常不用）
+  qwen2.5-1.5b-ft-q4_k_m.gguf            实际演示用的微调模型（941MB）
+  qwen2.5-1.5b-instruct-q4_k_m.gguf      基座 GGUF，用于对照实验（1.1GB）
+
+tools/
+  llama-vulkan/    llama-server.exe、llama-quantize.exe 及 DLL（演示/量化用）
+  llama-src/       llama.cpp 源码稀疏检出，只保留 convert_hf_to_gguf.py 等转换脚本
+  llama.cpp-src/   另一份转换脚本副本
+  *.zip            当时下载的压缩包，可留可删
+
+NAP2-privacy-rewrite-main/
+  第三方参考数据集，数据集为 CC BY-NC 4.0（仅限非商业用途），
+  代码为 Apache-2.0，源自 PERSONA-CHAT。
+  转发时保留 LICENSE、LICENSE-DATA、NOTICE 三个文件；
+  在报告或论文中使用时引用其 EMNLP 2025 论文。
+
+
+======================================================================
+二、本次更新（2026-11-09）
+======================================================================
+
+1. 新增本地心理学知识库与 RAG 检索：15 个评估来源、60 张知识卡，报告可带 [编号] 引用。
+2. 删除“云端追问 → 小模型作答 → 第二轮报告”协议，改为云端单轮生成报告；
+   信息缺口统一写在报告第五节。
+3. 删除 app/policy.py、两轮提示词与前端缺口裁决表；接口不再返回 rounds/gaps。
+4. 同步更新 README、技术报告、假云端、评测脚本与 smoke.py。
+
+升级方法：
+- 用本包的 project/ 替换旧 project/，保留原来的 .env 和 .venv。
+- 仍按原来的方式启动 llama-server（8080）和后端（8000）。
+- 没有 DeepSeek key 时，可用假云端联调：
+
+  python tools/mock_cloud.py 8090
+  set DEEPSEEK_API_KEY=mock
+  set DEEPSEEK_BASE_URL=http://127.0.0.1:8090/v1
+  .venv\Scripts\python -m uvicorn app.main:app --port 8000
+
+- 离线自检：python smoke.py
+
+已验证：
+- smoke.py 全部通过。
+- 检索评测：Hit@3 100%，MRR 0.917，平均 4.6 条参考。
+- 隐私评测：残留 PII 0%，别名残留 0%，重识别 top-1 10.7%（随机基线 10%）。
+- 假云端端到端：/api/extract 与 /api/analyze 均 200，响应无 gaps/rounds，回译正常，
+  泄漏文本仍返回 422。
+
+注意：
+- 真实姓名、映射表、note 仍只留在本地；不要随包发送 .env。
+- 详细启动、配置与评测命令见 project/README.md。
+
+
+======================================================================
+三、解压位置
+======================================================================
+
+建议直接解压到 D:\jiami，与打包时的绝对路径保持一致。
+
+- 演示：保持 project/、models/、tools/ 同级即可，放在其他盘也能跑
+  （启动命令使用相对路径）。
+- 只应用 2026-11-09 更新包：用新 project/ 替换旧 project/，保留 .env 和 .venv；
+  models/、tools/、NAP2 不动。
+- 重训：train/lora_sft.py 的默认参数写死了 D:\jiami\models\...；
+  如果改放到别的路径，运行时显式传 --base 和 --out，或修改该文件第 67、70 行。
+- 文档 README.md 和 docs/技术报告.md 里的训练命令也写的是 D:\jiami，注意替换。
+
+
+======================================================================
+四、环境要求
+======================================================================
+
+- Windows 10/11 x64（tools/llama-vulkan 里的 exe 是 Windows 构建，Mac/Linux 不能直接用）
+- Python 3.10 及以上（开发机为 3.14；若装依赖遇到兼容问题，可换 3.11/3.12）
+- 演示：普通 CPU 也能跑，但生成较慢；有 Vulkan 驱动的显卡更快
+- 重训：NVIDIA 显卡，显存约 8GB（开发机 RTX 5060 Laptop 8GB），内存 32GB
+- 首次安装依赖需要联网
+
+
+======================================================================
+五、首次安装
+======================================================================
+
+打开 CMD，执行：
+
+  cd /d D:\jiami\project
+  python -m venv .venv
+  .venv\Scripts\pip install -r requirements.txt
+
+只跑演示，装完上面这些就够了。
+如果只是应用 2026-11-09 更新包，通常不需要重装依赖；保留原 .venv，
+除非 requirements.txt 有新增依赖。
+
+如果要重训，再装训练依赖（版本为开发机实测，供参考）：
+
+  .venv\Scripts\pip install torch --index-url https://download.pytorch.org/whl/cu128
+  .venv\Scripts\pip install transformers peft datasets accelerate
+
+注意：本包不包含 .env，也没有任何 API key。
+
+
+======================================================================
+六、启动（三个窗口）
+======================================================================
+
+窗口 1：本地小模型（必须先启动）
+
+  cd /d D:\jiami\project
+  ..\tools\llama-vulkan\llama-server.exe -m ..\models\qwen2.5-1.5b-ft-q4_k_m.gguf -ngl 99 -c 4096 --host 127.0.0.1 --port 8080
+
+看到监听 8080 即成功。没有 Vulkan 显卡时把 -ngl 99 改成 -ngl 0 走 CPU。
+
+窗口 2：后端
+
+  cd /d D:\jiami\project
+  .venv\Scripts\python -m uvicorn app.main:app --port 8000
+
+浏览器打开 http://127.0.0.1:8000
+
+窗口 3（可选）：假云端，只用于没有 key 时联调单轮报告协议
+
+  cd /d D:\jiami\project
+  python tools\mock_cloud.py 8090
+
+然后用假云端启动后端（先关掉窗口 2 的后端，再执行）：
+
+  cd /d D:\jiami\project
+  set DEEPSEEK_API_KEY=mock
+  set DEEPSEEK_BASE_URL=http://127.0.0.1:8090/v1
+  .venv\Scripts\python -m uvicorn app.main:app --port 8000
+
+PowerShell 对应写法：
+
+  $env:DEEPSEEK_API_KEY="mock"
+  $env:DEEPSEEK_BASE_URL="http://127.0.0.1:8090/v1"
+
+假云端只返回固定报告和固定缺口（缺口写在报告第五节），用来验证单轮协议和界面，
+不能用于效果评价。
+
+使用真实 DeepSeek：
+
+  cd /d D:\jiami\project
+  copy .env.example .env
+  notepad .env
+
+在 .env 里填 DEEPSEEK_API_KEY，然后重启后端。
+不要把 .env 发给别人或提交到仓库。
+
+
+======================================================================
+七、关闭服务
+======================================================================
+
+在各窗口按 Ctrl+C。
+
+端口没释放时，查 PID 并结束：
+
+  netstat -ano | findstr ":8000 :8080 :8090"
+  taskkill /PID <PID> /F
+
+
+======================================================================
+八、重训与评测
+======================================================================
+
+完整命令见 project/README.md 的“微调”和“评测”两节。
+
+重训流程：
+  1. python train/prepare_sft.py
+  2. python train/lora_sft.py --base ... --out ... --epochs 3 --max-length 1024
+  3. python ..\tools\llama-src\convert_hf_to_gguf.py <merged> --outfile ... --outtype f16
+  4. ..\tools\llama-vulkan\llama-quantize.exe <f16.gguf> <q4_k_m.gguf> Q4_K_M
+
+开发机实测：600 条训练集约 37 分钟，train loss 0.0046，valid loss 0.00044。
+LoRA 参数：r=16、alpha=32、dropout=0.05、lr=2e-4、3 epochs、batch=1、
+梯度累积 8、seq=1024、bf16。
+
+三层评测：
+
+  python eval/run_extraction.py --data data/synth_test.jsonl --out results/xxx.json
+  python eval/run_privacy.py --results results/xxx.json --out results/privacy_xxx.json
+  python eval/run_utility.py --results results/xxx.json --out results/utility_xxx.json
+
+离线自检（不需要模型和 key）：
+
+  python smoke.py
+
+检索评测结果见“九、结果口径”；具体命令见 project/README.md。
+
+
+======================================================================
+九、结果口径（写报告时务必保留）
+======================================================================
+
+9.1 抽取与契约对照（30 篇合成测试集）
+
+  条件                    召回     直接泄漏率   契约违规/篇
+  基座裸输出              72.7%    86.7%        1.77
+  基座 + 规则             100%     0%           0.83
+  微调裸输出              100%     0%           0
+  微调 + 规则             100%     0%           0
+
+9.2 检索评测（2026-11-09 新增）
+
+  Hit@3：100%
+  MRR：0.917
+  平均参考条数：4.6 条
+
+9.3 隐私评测
+
+  残留 PII：0
+  别名残留：0
+  占位符缺失/未知：0
+  重识别 top-1：10.7%（84 个目标，随机基线 10%）
+  回询拒绝正确率：100%
+
+9.4 效用评测
+
+  关键点保留：100%
+  泛化词保留：100%
+  平均长度比：0.822
+  平均映射：5.7 项/篇
+
+9.5 假云端端到端（2026-11-09 已验证）
+
+  /api/extract 与 /api/analyze 均返回 200
+  响应无 gaps/rounds
+  回译正常
+  泄漏文本仍返回 422
+
+9.6 重要限定
+
+- 测试集与训练集同模板分布，微调后的 100% 是分布内上界，不能当作开放域泛化。
+- 规则层是在这批测试错误上迭代过的，base+规则 也应视为开发集数字。
+- 最干净的对照是“基座裸输出 → 微调裸输出”。
+- 协议已改为云端单轮生成报告，信息缺口统一写在报告第五节；接口不再返回 rounds/gaps。
+- 真实云端 rubric 评测和真人盲评仍待补。
+
+
+======================================================================
+十、许可与引用
+======================================================================
+
+- 本项目代码：课程作业用途。
+- Qwen2.5-1.5B-Instruct：Apache-2.0。
+- llama.cpp：MIT。
+- NAP2-privacy-rewrite-main：数据集为 CC BY-NC 4.0（仅限非商业用途），
+  代码为 Apache-2.0，源自 PERSONA-CHAT。
+  转发时保留 LICENSE、LICENSE-DATA、NOTICE 三个文件；
+  在报告或论文中使用时引用其 EMNLP 2025 论文。
+
+
+======================================================================
+十一、常见问题
+======================================================================
+
+Q: 页面右上角本地模型徽标是红的？
+A: 窗口 1 的 llama-server 没启动或端口不是 8080。
+
+Q: 点“确认并分析”报 422？
+A: 发送前扫描发现加密文本里还有真名或手机号等，按提示修改加密文本后重试。
+
+Q: 点分析报 502？
+A: 没有配置 DEEPSEEK_API_KEY，或云端地址/模型名不对；也可以先用假云端联调。
+
+Q: 更新后接口还返回 rounds/gaps 吗？
+A: 不返回。已改为云端单轮生成报告，信息缺口统一写在报告第五节。
+
+Q: 微调脚本报找不到 D:\jiami\models\...？
+A: 解压路径不是 D:\jiami，按第三节修改 --base / --out。
+
+Q: 模型能换吗？
+A: 可以。演示时把 llama-server 的 -m 换成其他 GGUF；
+   健康徽标里的模型名由 .env 的 LOCAL_MODEL 控制，仅展示用。
